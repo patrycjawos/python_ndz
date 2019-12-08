@@ -1,0 +1,203 @@
+<!--
+
+	To jest komentarz w HTML. Wykorzystamy komentarze, aby opowiedzieć Ci trochę więcej o tym czego dotyczą poszczególne składowe tej strony.
+
+-->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Open Day {miasto} - 201{x}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- 
+
+		Bloczek style przechowuje style CSS dla strony. Mogą one znajdować się w "głowie" (z ang. head) strony, jak i w oddzielnym pliku, co w większości przypadków jest rozwiązaniem sugerowanym.
+
+	-->
+	<style>
+		body {
+		  padding-top: 50px;
+		  padding-bottom: 20px;
+		}
+
+		/* Mops Mode :) - klasę możemy dodać */
+		.mops {
+			background-image: url('mops.jpg');
+			background-size: cover;
+		}
+	</style>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top hidden">
+      	<div class="container">
+        	<div class="navbar-header">
+          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            	<span class="sr-only">Nawigacja</span>
+	            	<span class="icon-bar"></span>
+	            	<span class="icon-bar"></span>
+	            	<span class="icon-bar"></span>
+          		</button>
+          		<a class="navbar-brand" href="#">WOW Demo(nizator) JS :)</a>
+        	</div>
+        	<div id="navbar" class="navbar-collapse collapse">
+          		<div class="navbar-form navbar-right">
+		            <div class="form-group">
+		              <input id="rownanie" type="text" placeholder="Że ja nie policzę?" class="form-control">
+		            </div>
+		            <!-- Po identyfikatorze obiektu, możemy go łatwo rozpoznać / pobrać / obsłużyć -->
+		            <button id="policz" type="submit" class="btn btn-success" onclick="policz()">Policz!</button>
+	          	</div>
+        	</div>
+      	</div>
+    </nav>
+
+    <div class="przywitka jumbotron hidden">
+      	<div class="container">
+        	<h1>Witaj uczniu Jedi!</h1>
+        	<p>Ta strona powstała, aby zapoznać Cię ze strukturą - czyli budową - stron WWW oraz aby dać Ci trochę radości z jej <strong>psucia i niszczenia</strong> :) Podążaj za instrukcjami trenera, bądź tymi odnalezionymi w czeluściach tej strony. Baw się dobrze, odkrywaj, ucz się i zapamiętuj jak najwięcej. <strong>Niech kod będzie z Tobą!</strong></p>
+        	<p>
+        		<a class="btn btn-primary btn-lg" href="#" role="button" title="Pobierz stronę, aby pobawić się nią np. w domu :)">Pobierz mnie &raquo;</a>
+        		<!-- A jestem tutaj sobie takim ukrytym przyciskiem, w którym trzeba by usunąć klasę hidden, abym stał się widoczny i aktywny... -->
+        		<a class="btn btn-primary btn-lg " href="#" role="button" title="Zaszalejmy trochę!">Rolmops!!!</a>
+        	</p>
+      	</div>
+    </div>
+
+    <div class="tresc container hidden">
+      	<div class="row">
+	        <div class="col-md-4">
+	          	<h2>O nas</h2>
+	          	<p>Nazywamy się <strong>WOW School</strong> i my tu tylko uczymy ;) Widzisz tę stronę, bo trafiłeś na nasze dni otwarte i zajęcia z WWW. Fajnie, że jesteś!</p>
+	        </div>
+        	<div class="col-md-4">
+          		<h2>O Was</h2>
+          		<p>Niesamowicie Wam <strong>zazdrościmy</strong> - to po pierwsze! W wieku, w którym jesteście, każdy z nas chciałby wiedzieć to co właśnie jest przez Was teraz przyswajane. Nie zmarnujcie tego!</p>
+       		</div>
+        	<div class="col-md-4">
+          		<h2>O nich</h2>
+          		<p><strong>Oni</strong> to osoby, których tutaj z nami nie ma. Nie znają podstaw budowy stron WWW i nie wiedzą do czego można wiedzę na ten temat wykorzystać. Ich strata!</p>
+        	</div>
+      	</div>
+
+      	<hr>
+
+      	<footer>
+        	<p>&copy; 2017 <a href="http://www.wowschool.pl" target="_blank" title="Dowiedz się więcej o nas!">WOW School</a></p>
+      	</footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- 
+		
+		Poniżej znajdują się skrypty Javascript, które napisaliśmy na potrzeby tego projektu.
+		Mogą znajdować się bezpośrednio w kodzie strony (tak jak zrobiliśmy to tutaj dla uproszczenia), bądź w oddzielnym pliku np. scripts.js (jest to rozwiązanie sugerowane).
+
+		Funkcje możemy wywoływać z poziomu konsoli bądź z innych funkcji. Pobaw się! :)
+
+	-->
+	<script type="text/javascript">
+		/* Przywitka w konsoli - czy to to Cię tutaj przyprowadziło? :) */
+		function helloWOW() {
+			// Funkcja console.log to funkcja wbudowana w j. javascript - wyświetla informacje tekstowe w konsoli narzędzi developerskich (f12)
+		    console.log(
+		        '%cOoo hej, dotarłeś też i tutaj!!!%c ♥♥♥ %cSkoro tak to spróbuj również odkryć inne funkcje i opcje, które stworzyliśmy dla Ciebie w obrębie tej strony. Zerknij np. w źródła strony i sekcję %c--> %cscripts %ci jeśli będziesz szukał wnikliwie to znajdziesz tam kilka ciekawych opcji i elementów :) %cBaw się dobrze! ',
+		        'background: #ddd; color: #000; font-weight: bold; font-size: x-large;',
+		        'background: #ddd; color: red; font-weight: bold; font-size: x-large;',
+		        'background: #ddd; color: #000; font-weight: bold; font-size: x-large;',
+		        'background: #ddd; color: #000; font-weight: bold; font-size: x-large;',
+		        'background: #ddd; color: red; font-weight: bold; font-size: x-large;',
+		        'background: #ddd; color: #000; font-weight: bold; font-size: x-large;',
+		        'background: #ddd; color: red; font-weight: bold; font-size: x-large;'
+		    );
+		}
+
+		/* Odkryj i pokaż nawigację! */
+		function pokazNawigacje() {
+			$("nav").removeClass("hidden");
+		}
+
+		/* Bądź ukryj ją jeśli chcesz :) */
+		function ukryjNawigacje() {
+			$("nav").addClass("hidden");
+		}
+
+		/* Jumbotron - nasza treść, którą chcielibyśmy abyś odczytał(a) */
+		function pokazPrzywitanie() {
+			$(".przywitka").removeClass("hidden");
+		}
+
+		/* Starczy, chowaj mi to! ;) */
+		function ukryjPrzywitanie() {
+			$(".przywitka").addClass("hidden");
+		}
+
+		/* Możemy "zmopsować" naszą przywitkę również - sprawdź koniecznie! */
+		function zmopsujPrzywitke() {
+			$(".przywitka").addClass("mops");
+		}
+
+		/* Treść właściwa - tutaj musisz już zaszaleć sam - o pomoc proś trenera! */
+		function pokazTresc() {
+			// ... ToDo!
+		}
+
+		function ukryjTresc() {
+			// ... ToDo!
+		}
+
+		/* Pora na trochę zabawy... pokaż mopsa! */
+		function pokazMopsy(ile) {
+			// Jeśli nie podamy liczby mopsów do wyświetlenia, pokażemy ich domyślnie 50 :)
+			if(ile == null) ile = 50;
+
+			for(var i = 0; i < ile; i++) {
+				var lewyMargines = losujLiczbe();
+				var gornyMargines = losujLiczbe(); // Nie stosujemy polskich znaków w nazwach własnych!!!
+
+			    $("body").append("<img class='mopsior-" + i + "' src='face.png' style='position: absolute'>");
+				$("img.mopsior-" + i).css({"position":"absolute","top": gornyMargines + "px", "left": lewyMargines + "px"});
+			}
+		}
+
+		/* Wywrócimy trochę naszą stronę ;) Dokładnie o 45 stopni! */
+		function rolMops(oIle) {
+			$("body").css({"transform":"rotate(45deg)"});
+		}
+
+		/* A ta funkcja akurat jest funkcją pomocniczą do pokazywania mopsów - losuje liczbę */
+		function losujLiczbe() {
+		  	var num = Math.floor((Math.random() * 550) + 1);
+    		return num;
+		}
+
+		/* Funkcja łączy w sobie wywołania innych funkcji i pokazuje wszystkie ukryte na stronie elementy */
+		function pokazWszystko() {
+			pokazNawigacje();
+			pokazPrzywitanie();
+			pokazTresc();
+		}
+
+		/* Funkcja licząca wynik równania wprowadzonego w polu tekstowym */
+		function policz() {
+			var rownanie = $("#rownanie").val();
+			if(rownanie != "") {
+				// Funkcja alert to funkcja wbudowana w język Javascript - wyświetla informację w postaci okna modalnego
+				alert("Wynik równania [" + rownanie + "] to: [" + eval(rownanie) + "]");
+			}
+ 		}
+
+		helloWOW();
+	</script>
+</body>
+</html>
